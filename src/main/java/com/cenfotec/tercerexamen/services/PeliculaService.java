@@ -5,10 +5,11 @@ import org.springframework.http.ResponseEntity;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Optional;
 
 public interface PeliculaService {
 
+    //REST
     Pelicula createPelicula(Pelicula newPelicula);
 
     ResponseEntity<Pelicula> readPelicula(Long id);
@@ -30,5 +31,20 @@ public interface PeliculaService {
     ArrayList<Pelicula> readPeliculasByDate(String fechaLanzamiento) throws ParseException;
 
     ArrayList<Pelicula> readPeliculasByYear(int year);
+
+    //GraphQL
+    Pelicula createPeliculaGraphQL(Pelicula newPelicula);
+
+    Optional<Pelicula> readPeliculaGraphQL(Long id);
+
+    Pelicula updatePeliculaGraphQL(Long id, Pelicula pelicula);
+
+    Pelicula deletePeliculaGraphQL(Long id);
+
+    ArrayList<Pelicula> readPeliculasGraphQL();
+
+    ArrayList<Pelicula> readPeliculasByNameGraphQL(String titulo);
+
+    ArrayList<Pelicula> readPeliculasByYearGrapQL(int year);
 
 }

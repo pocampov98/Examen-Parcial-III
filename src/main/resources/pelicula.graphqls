@@ -1,0 +1,21 @@
+type Pelicula {
+    id: ID!,
+    titulo: String,
+    presupuesto: String,
+    duracion: String,
+    lenguaje: String,
+    fechaLanzamiento: String
+}
+
+type Query {
+    pelicula(id: ID):Pelicula
+    peliculas:[Pelicula]
+    peliculasByName(titulo: String):[Pelicula]
+    peliculasByYear(year: String):[Pelicula]
+}
+
+type Mutation {
+    createPelicula(titulo: String!,presupuesto: String!,duracion: String!,lenguaje: String!,fechaLanzamiento: String!):Pelicula
+    updatePelicula(id: String!,titulo: String!,presupuesto: String!,duracion: String!,lenguaje: String!,fechaLanzamiento: String!):Pelicula
+    deletePelicula(id: String!):Pelicula
+}

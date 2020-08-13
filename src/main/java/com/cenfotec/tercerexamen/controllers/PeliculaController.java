@@ -7,8 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 @RestController
 @RequestMapping({"/peliculas"})
@@ -60,6 +58,4 @@ public class PeliculaController {
     public ResponseEntity<?> deletePelicula(@PathVariable("id") Long id) {
         return peliculaService.deletePelicula(id);
     }
-
-
 }
